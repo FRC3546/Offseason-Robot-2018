@@ -1,5 +1,4 @@
 package org.usfirst.frc.team3546.robot.subsystems;
-import edu.wpi.first.wpilibj.Relay;
 import org.usfirst.frc.team3546.robot.RobotMap;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
