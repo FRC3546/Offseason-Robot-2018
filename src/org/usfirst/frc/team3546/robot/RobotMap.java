@@ -12,7 +12,6 @@ public class RobotMap {
 	
 	public static RobotDrive driveTrainMotors;
 	public static DoubleSolenoid shifterPositionSolenoid;
-	//public static AnalogInput sensor
 	
 	public static void init(){
 		
