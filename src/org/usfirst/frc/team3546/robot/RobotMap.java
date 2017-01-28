@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3546.robot;
 
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -12,6 +13,7 @@ public class RobotMap {
 	
 	public static RobotDrive driveTrainMotors;
 	public static DoubleSolenoid shifterPositionSolenoid;
+	public static Potentiometer testPotentiometer;
 	
 	public static void init(){
 		
@@ -19,6 +21,9 @@ public class RobotMap {
 		//SpeedController frontRightMotor = new VictorSP(2);
 		//SpeedController backLeftMotor = new VictorSP(1);
 		//SpeedController backRightMotor = new VictorSP(0);
+
+		testPotentiometer = new AnalogPotentiometer(0,360,0);
+		double degrees = testPotentiometer.get();
 
 		SpeedController frontLeftMotor = new Jaguar(3);
 		SpeedController frontRightMotor = new Jaguar(2);

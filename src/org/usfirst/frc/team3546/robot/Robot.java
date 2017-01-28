@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team3546.robot.commands.Drive;
+import org.usfirst.frc.team3546.robot.commands.PrintPotentiometer;
 import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForward;
 import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForwardDropBall;
 import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForwardDropBallTurn180;
@@ -25,7 +26,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * creating this project, you must also update the manifest file in the resource
  * directory
  */
-public class Robot extends IterativeRobot {
+public class
+Robot extends IterativeRobot {
 
 	public static DriveTrain robotDriveTrain;
 	public static OI oi;
