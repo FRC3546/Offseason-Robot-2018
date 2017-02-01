@@ -23,7 +23,6 @@ public class RobotMap {
 		//SpeedController backRightMotor = new VictorSP(0);
 
 		testPotentiometer = new AnalogPotentiometer(0,360,0);
-		double degrees = testPotentiometer.get();
 
 		SpeedController frontLeftMotor = new Jaguar(3);
 		SpeedController frontRightMotor = new Jaguar(2);

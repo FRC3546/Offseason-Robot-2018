@@ -8,12 +8,12 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
 import org.usfirst.frc.team3546.robot.commands.Drive;
 import org.usfirst.frc.team3546.robot.commands.PrintPotentiometer;
 import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForward;
 import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForwardDropBall;
 import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForwardDropBallTurn180;
+import org.usfirst.frc.team3546.robot.subsystems.Sensors;
 import org.usfirst.frc.team3546.robot.subsystems.Shifter;
 import org.usfirst.frc.team3546.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -32,27 +32,30 @@ Robot extends IterativeRobot {
 	public static DriveTrain robotDriveTrain;
 	public static OI oi;
 	public static Shifter shifter;
+	public static Sensors sensors;
 
-    Command autonomousCommand;
-    Command driveCommand;
-    SendableChooser autoChooser;
+           Command autonomousCommand;
+           Command driveCommand;
+           SendableChooser autoChooser;
 
-    /**
-     * This function is run when the robot is first started up and should be
-     * used for any initialization code.
-     */
-    public void robotInit() {
-    	RobotMap.init();
-		oi = new OI();
-		robotDriveTrain = new DriveTrain();
-		shifter = new Shifter();
+           /**
+            * This function is run when the robot is first started up and should be
+            * used for any initialization code.
+            */
+        public void robotInit() {
+            RobotMap.init();
+            oi = new OI();
+            robotDriveTrain = new DriveTrain();
+            shifter = new Shifter();
+            sensors = new Sensors();
 
-        new Thread(() -> {
+            new Thread(() -> {
             UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
             camera.setResolution(640, 480);
         }).start();
 
         //autonomousCommand = new DriveForward();
+        //testing
 
         autoChooser = new SendableChooser();
         autoChooser.addDefault("Default Auto", new DriveForward());
@@ -117,6 +120,8 @@ Robot extends IterativeRobot {
         if (autonomousCommand != null) autonomousCommand.cancel();
         driveCommand = new Drive();
         driveCommand.start();
+        PrintPotentiometer printPotentiometer = new PrintPotentiometer();
+        printPotentiometer.start();
     }
 
     /**

@@ -35,8 +35,8 @@ public class OI {
 		//sweeperBarRotationOutButton = new JoystickButton(leftJoystick,2);
 		//sweeperBarRotationOutButton.whileHeld(new SweeperBarRotationOut());
 
-		printPotentiometerButton = new JoystickButton(leftJoystick, 4);
-		printPotentiometerButton.whenPressed(new PrintPotentiometer());
+		//printPotentiometerButton = new JoystickButton(leftJoystick, 4);
+		//printPotentiometerButton.whenPressed(new PrintPotentiometer());
 
 		forwardDriveButton = new JoystickButton(rightJoystick, 3);
 		forwardDriveButton.whenPressed(new ForwardDrive());
