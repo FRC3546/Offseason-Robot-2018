@@ -13,9 +13,7 @@ import org.usfirst.frc.team3546.robot.commands.PrintPotentiometer;
 import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForward;
 import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForwardDropBall;
 import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForwardDropBallTurn180;
-import org.usfirst.frc.team3546.robot.subsystems.Sensors;
-import org.usfirst.frc.team3546.robot.subsystems.Shifter;
-import org.usfirst.frc.team3546.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team3546.robot.subsystems.*;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -33,6 +31,8 @@ Robot extends IterativeRobot {
 	public static OI oi;
 	public static Shifter shifter;
 	public static Sensors sensors;
+	public static GearManipulation gearManipulation;
+	public static Climbing climbing;
 
            Command autonomousCommand;
            Command driveCommand;
@@ -48,6 +48,8 @@ Robot extends IterativeRobot {
             robotDriveTrain = new DriveTrain();
             shifter = new Shifter();
             sensors = new Sensors();
+            gearManipulation = new GearManipulation();
+            climbing = new Climbing();
 
             new Thread(() -> {
             UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();

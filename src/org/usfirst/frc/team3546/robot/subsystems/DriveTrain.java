@@ -7,23 +7,23 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class DriveTrain extends Subsystem {
 	private final RobotDrive driveTrainMotors = RobotMap.driveTrainMotors;
 
-	public static boolean inverted = false;
+	public static boolean drivetraininvert = false;
 
 	public void invertDriveTrain(){
 
-		if(inverted == true){
-			inverted = false;
+		if(drivetraininvert == true){
+			drivetraininvert = false;
 		}else{
-			inverted = true;
+			drivetraininvert = true;
 		}
 	}
 
 	public void ForwardDrive(){
-		inverted = false;
+		drivetraininvert = false;
 	}
 
 	public void ReverseDrive(){
-		inverted = true;
+		drivetraininvert = true;
 	}
 
 	protected void initDefaultCommand() {}
@@ -38,7 +38,7 @@ public class DriveTrain extends Subsystem {
 
 	public void setMotorOutputs(Joystick leftJoystick, Joystick rightJoystick) {
 
-		if(inverted == false) {
+		if(drivetraininvert == false) {
 			driveTrainMotors.tankDrive(leftJoystick, rightJoystick);
 		}
 		else{

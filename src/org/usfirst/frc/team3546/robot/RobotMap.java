@@ -13,7 +13,17 @@ public class RobotMap {
 	
 	public static RobotDrive driveTrainMotors;
 	public static DoubleSolenoid shifterPositionSolenoid;
-	public static Potentiometer testPotentiometer;
+	public static DoubleSolenoid clampPositionSolenoid;
+	public static DoubleSolenoid gearGrabSolenoid;
+	public static Potentiometer shootingorStorageGuidePotentiometer;
+	public static Potentiometer highorLowShootingGuidePotentiometer;
+	public static SpeedController climbingMotor;
+	public static SpeedController highorLowShootingGuideMotor;
+	public static SpeedController rearShootingandIntakeMotor;
+	public static SpeedController frontShootingMotor;
+	public static SpeedController frontIntakeandStorageMotor;
+	public static Encoder rearShootingandIntakeEncoder;
+	public static Encoder frontShootingEncoder;
 	
 	public static void init(){
 		
@@ -22,12 +32,24 @@ public class RobotMap {
 		//SpeedController backLeftMotor = new VictorSP(1);
 		//SpeedController backRightMotor = new VictorSP(0);
 
-		testPotentiometer = new AnalogPotentiometer(0,360,0);
+		shootingorStorageGuidePotentiometer = new AnalogPotentiometer(0,360,0);
+		highorLowShootingGuidePotentiometer = new AnalogPotentiometer(1,360,0);
+
+		rearShootingandIntakeEncoder = new Encoder(0,1, false);
+		frontShootingEncoder = new Encoder(2,3,false);
+
 
 		SpeedController frontLeftMotor = new Jaguar(3);
 		SpeedController frontRightMotor = new Jaguar(2);
 		SpeedController backLeftMotor = new Jaguar(1);
 		SpeedController backRightMotor = new Jaguar(0);
+
+		SpeedController climbingMotor = new VictorSP(4);
+		SpeedController highorLowShootingGuideMotor = new VictorSP(5);
+		SpeedController frontIntakeandStorageMotor = new VictorSP(6);
+
+		SpeedController rearShootingandIntakeMotor = new TalonSRX(0);
+		SpeedController frontShootingMotor = new TalonSRX(1);
 
 		driveTrainMotors = new RobotDrive(frontLeftMotor, backLeftMotor, frontRightMotor, backRightMotor);
 
@@ -43,7 +65,9 @@ public class RobotMap {
 		//driveTrainMotors.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		//driveTrainMotors.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 
-		shifterPositionSolenoid = new DoubleSolenoid(0, 2, 3);
+		shifterPositionSolenoid = new DoubleSolenoid(0, 0, 1);
+		clampPositionSolenoid = new DoubleSolenoid(0, 2, 3);
+		gearGrabSolenoid = new DoubleSolenoid(0, 4, 5);
 		
 		
 	}

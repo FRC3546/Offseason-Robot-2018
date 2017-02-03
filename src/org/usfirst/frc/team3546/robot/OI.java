@@ -2,6 +2,7 @@ package org.usfirst.frc.team3546.robot;
 import org.usfirst.frc.team3546.robot.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.usfirst.frc.team3546.robot.subsystems.Climbing;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -19,6 +20,8 @@ public class OI {
 
 	public JoystickButton forwardDriveButton;
 	public JoystickButton reverseDriveButton;
+
+	public JoystickButton climbingButton;
 
 	public JoystickButton printPotentiometerButton;
 
@@ -47,6 +50,9 @@ public class OI {
 		highGearButton.whenPressed(new DriveTrainHighGear());
 		lowGearButton = new JoystickButton(leftJoystick, 2);
 		lowGearButton.whenPressed(new DriveTrainLowGear());
+
+		climbingButton = new JoystickButton(rightJoystick, 5);
+		climbingButton.whileHeld(new Climb());
 		}
 	
 	public Joystick getLeftJoystick() { return leftJoystick; }

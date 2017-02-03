@@ -28,7 +28,7 @@ public void invertShifter() {
 
 }
 
-public DoubleSolenoid.Value getShifterPosition() { return shifterPositionSolenoid.get(); }
+//public DoubleSolenoid.Value getShifterPosition() { return shifterPositionSolenoid.get(); }
 
 protected void initDefaultCommand() {
 	// TODO Auto-generated method stub
