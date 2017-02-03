@@ -53,7 +53,8 @@ Robot extends IterativeRobot {
 
             new Thread(() -> {
             UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-            camera.setResolution(640, 480);
+            camera.setResolution(360, 240);
+            camera.setFPS(8);
         }).start();
 
         //autonomousCommand = new DriveForward();
