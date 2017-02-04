@@ -12,6 +12,10 @@ import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 public class RobotMap {
 	
 	public static RobotDrive driveTrainMotors;
+	public static SpeedController drivetrainBackRightMotor;
+	public static SpeedController drivetrainBackLeftMotor;
+	public static SpeedController drivetrainFrontRightMotor;
+	public static SpeedController drivetrainFrontLeftMotor;
 	public static DoubleSolenoid shifterPositionSolenoid;
 	public static DoubleSolenoid clampPositionSolenoid;
 	public static DoubleSolenoid gearGrabSolenoid;
@@ -24,6 +28,9 @@ public class RobotMap {
 	public static SpeedController frontIntakeandStorageMotor;
 	public static Encoder rearShootingandIntakeEncoder;
 	public static Encoder frontShootingEncoder;
+
+	public static Encoder drivetrainRightDrivetrainEncoder;
+	public static Encoder drivetrainLeftDrivetrainEncoder;
 	
 	public static void init(){
 		
