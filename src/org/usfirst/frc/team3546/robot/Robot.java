@@ -33,6 +33,7 @@ Robot extends IterativeRobot {
 	public static Sensors sensors;
 	public static GearManipulation gearManipulation;
 	public static Climbing climbing;
+	public static Gyro gyro;
 
            Command autonomousCommand;
            Command driveCommand;
@@ -50,6 +51,9 @@ Robot extends IterativeRobot {
             sensors = new Sensors();
             gearManipulation = new GearManipulation();
             climbing = new Climbing();
+            gyro = new Gyro();
+
+            gyro.zeroYaw();
 
             new Thread(() -> {
             UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
