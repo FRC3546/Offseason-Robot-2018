@@ -11,6 +11,8 @@ import org.usfirst.frc.team3546.robot.RobotMap;
  */
 public class BallSorting extends Subsystem {
 
+    protected void initDefaultCommand() {}
+
     public static final double SHOOTING_OR_STORAGE_GUIDE_MOTOR_PID_P = .1;
     public static final double SHOOTING_OR_STORAGE_GUIDE_MOTOR_PID_I = 0;
     public static final double SHOOTING_OR_STORAGE_GUIDE_MOTOR_PID_D = 0;
@@ -40,8 +42,6 @@ public class BallSorting extends Subsystem {
         setShootingOrStoragePosition(LOW_DEGREE_VALUE);
     }
 
-    @Override
-    protected void initDefaultCommand() {}
 
     private static Potentiometer shootingorStorageGuidePotentiometer = RobotMap.shootingorStorageGuidePotentiometer;
     public double getShootingorStorageGuidePotentiometerAngle(){
@@ -49,4 +49,15 @@ public class BallSorting extends Subsystem {
     }
 
     private SpeedController shootingorStorageGuideMotor = RobotMap.shootingorStorageGuideMotor;
+
+    private final SpeedController frontIntakeandStorageMotor = RobotMap.frontIntakeandStorageMotor;
+
+    public static final double FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED = 1;
+
+    public void spinFrontIntakeandStorageMotorClockwise(){frontIntakeandStorageMotor.set(FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED);}
+
+    public void spinFrontIntakeandStorageMotorCounterClockwise(){frontIntakeandStorageMotor.set(-FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED);}
+
+    public void climbingMotorOff(){climbingMotorOff();}
 }
+

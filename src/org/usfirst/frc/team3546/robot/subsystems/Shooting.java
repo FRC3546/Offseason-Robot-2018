@@ -80,9 +80,9 @@ public class Shooting extends Subsystem {
                 highorLowShootingGuideMotor);
     }
 
-    private void setFrontShootingSpeed (double speed){}
+    public void setFrontShootingSpeed (double speed){}
 
-    private void setRearShootingSpeed (double speed){}
+    public void setRearShootingSpeed (double speed){}
 
     public void setSpinUpShooters (){
         setFrontShootingSpeed(FRONT_MOTOR_SHOOTING_RPM);
