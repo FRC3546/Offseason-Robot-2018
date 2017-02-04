@@ -34,22 +34,16 @@ public class RobotMap {
 	
 	public static void init(){
 		
-		//SpeedController frontLeftMotor = new VictorSP(3);
-		//SpeedController frontRightMotor = new VictorSP(2);
-		//SpeedController backLeftMotor = new VictorSP(1);
-		//SpeedController backRightMotor = new VictorSP(0);
+		SpeedController frontLeftMotor = new VictorSP(3);
+		SpeedController frontRightMotor = new VictorSP(2);
+		SpeedController backLeftMotor = new VictorSP(1);
+		SpeedController backRightMotor = new VictorSP(0);
 
 		shootingorStorageGuidePotentiometer = new AnalogPotentiometer(0,360,0);
 		highorLowShootingGuidePotentiometer = new AnalogPotentiometer(1,360,0);
 
 		rearShootingandIntakeEncoder = new Encoder(0,1, false);
 		frontShootingEncoder = new Encoder(2,3,false);
-
-
-		SpeedController frontLeftMotor = new Jaguar(3);
-		SpeedController frontRightMotor = new Jaguar(2);
-		SpeedController backLeftMotor = new Jaguar(1);
-		SpeedController backRightMotor = new Jaguar(0);
 
 		SpeedController climbingMotor = new VictorSP(4);
 		SpeedController highorLowShootingGuideMotor = new VictorSP(5);
