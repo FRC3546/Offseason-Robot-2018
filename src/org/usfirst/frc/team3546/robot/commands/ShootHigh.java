@@ -30,7 +30,11 @@ public class ShootHigh extends Command{
     }
 
     // Called once after isFinished returns true
-    protected void end() {}
+    protected void end() {
+        Robot.shooting.setFrontShootingSpeed(0);
+        Robot.shooting.setRearShootingSpeed(0);
+        Robot.ballSorting.spinFrontIntakeandStorageMotorOff();
+    }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run

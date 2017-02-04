@@ -58,6 +58,8 @@ public class BallSorting extends Subsystem {
 
     public void spinFrontIntakeandStorageMotorCounterClockwise(){frontIntakeandStorageMotor.set(-FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED);}
 
+    public void spinFrontIntakeandStorageMotorOff(){frontIntakeandStorageMotor.set(0);}
+
     public void climbingMotorOff(){climbingMotorOff();}
 }
 
