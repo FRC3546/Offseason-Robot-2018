@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3546.robot;
 
+import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 
@@ -23,11 +24,10 @@ public class RobotMap {
 	public static Potentiometer highorLowShootingGuidePotentiometer;
 	public static SpeedController climbingMotor;
 	public static SpeedController highorLowShootingGuideMotor;
-	public static SpeedController rearShootingandIntakeMotor;
-	public static SpeedController frontShootingMotor;
+	public static CANTalon rearShootingandIntakeMotor;
+	public static CANTalon frontShootingMotor;
 	public static SpeedController frontIntakeandStorageMotor;
-	public static Encoder rearShootingandIntakeEncoder;
-	public static Encoder frontShootingEncoder;
+	public static SpeedController shootingorStorageGuideMotor;
 
 	public static Encoder drivetrainRightDrivetrainEncoder;
 	public static Encoder drivetrainLeftDrivetrainEncoder;
@@ -39,18 +39,16 @@ public class RobotMap {
 		SpeedController backLeftMotor = new VictorSP(1);
 		SpeedController backRightMotor = new VictorSP(0);
 
-		shootingorStorageGuidePotentiometer = new AnalogPotentiometer(0,360,0);
-		highorLowShootingGuidePotentiometer = new AnalogPotentiometer(1,360,0);
+		shootingorStorageGuidePotentiometer = new AnalogPotentiometer(0,3600,0);
+		highorLowShootingGuidePotentiometer = new AnalogPotentiometer(1,3600,0);
 
-		rearShootingandIntakeEncoder = new Encoder(0,1, false);
-		frontShootingEncoder = new Encoder(2,3,false);
+		climbingMotor = new VictorSP(4);
+		highorLowShootingGuideMotor = new VictorSP(5);
+		frontIntakeandStorageMotor = new VictorSP(6);
+		shootingorStorageGuideMotor = new VictorSP(7);
 
-		SpeedController climbingMotor = new VictorSP(4);
-		SpeedController highorLowShootingGuideMotor = new VictorSP(5);
-		SpeedController frontIntakeandStorageMotor = new VictorSP(6);
-
-		SpeedController rearShootingandIntakeMotor = new TalonSRX(0);
-		SpeedController frontShootingMotor = new TalonSRX(1);
+		rearShootingandIntakeMotor = new CANTalon(0);
+		frontShootingMotor = new CANTalon(1);
 
 		driveTrainMotors = new RobotDrive(frontLeftMotor, backLeftMotor, frontRightMotor, backRightMotor);
 

@@ -30,10 +30,11 @@ Robot extends IterativeRobot {
 	public static DriveTrain robotDriveTrain;
 	public static OI oi;
 	public static Shifter shifter;
-	public static Sensors sensors;
 	public static GearManipulation gearManipulation;
 	public static Climbing climbing;
 	public static Gyro gyro;
+	public static Shooting shooting;
+	public static BallSorting ballSorting;
 
            Command autonomousCommand;
            Command driveCommand;
@@ -48,10 +49,11 @@ Robot extends IterativeRobot {
             oi = new OI();
             robotDriveTrain = new DriveTrain();
             shifter = new Shifter();
-            sensors = new Sensors();
             gearManipulation = new GearManipulation();
             climbing = new Climbing();
             gyro = new Gyro();
+            shooting = new Shooting();
+            ballSorting = new BallSorting();
 
             gyro.zeroYaw();
 
