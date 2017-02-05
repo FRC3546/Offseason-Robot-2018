@@ -6,8 +6,8 @@ import org.usfirst.frc.team3546.robot.Robot;
 /**
  * Created by User on 2/4/2017.
  */
-public class FuelIntake extends Command {
-    public FuelIntake() {
+public class FuelOutput extends Command{
+    public FuelOutput() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -19,8 +19,8 @@ public class FuelIntake extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.shooting.setRearShootingSpeed(-100);
-        Robot.ballSorting.spinFrontIntakeandStorageMotorClockwise();
+        Robot.shooting.setRearShootingSpeed(100);
+        Robot.ballSorting.spinFrontIntakeandStorageMotorCounterClockwise();
     }
 
     // Make this return true when this Command no longer needs to run execute()
