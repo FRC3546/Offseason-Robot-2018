@@ -44,6 +44,9 @@ public class Shooting extends Subsystem {
     public static final double FRONT_MOTOR_SHOOTING_RPM = 100;
     public static final double REAR_MOTOR_SHOOTING_RPM = 100;
 
+    public static final double SPIT_OUT_RPM = -100;
+    public static final double INTAKE_RPM = 100;
+
 
     @Override
     protected void initDefaultCommand() {}
@@ -64,6 +67,7 @@ public class Shooting extends Subsystem {
         rearShootingandIntakeMotor.setVoltageRampRate(REAR_SHOOTING_PID_MAX_RATE);
         rearShootingandIntakeMotor.changeControlMode(CANTalon.TalonControlMode.Speed);
         rearShootingandIntakeMotor.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
+        rearShootingandIntakeMotor.configEncoderCodesPerRev(1024);
 
         frontShootingMotor.setP(FRONT_SHOOTING_PID_P);
         frontShootingMotor.setI(FRONT_SHOOTING_PID_I);
@@ -71,6 +75,7 @@ public class Shooting extends Subsystem {
         frontShootingMotor.setVoltageRampRate(FRONT_SHOOTING_PID_MAX_RATE);
         frontShootingMotor.changeControlMode(CANTalon.TalonControlMode.Speed);
         frontShootingMotor.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder);
+        frontShootingMotor.configEncoderCodesPerRev(1024);
 
         highorLowShootingGuidePIDController = new PIDController(
                 HIGH_OR_LOW_SHOOTING_GUIDE_MOTOR_PID_P,
@@ -80,14 +85,26 @@ public class Shooting extends Subsystem {
                 highorLowShootingGuideMotor);
     }
 
-    public void setFrontShootingSpeed (double speed){}
+    private void setFrontShootingSpeed (double rpm){
+        frontShootingMotor.set(rpm);
+    }
 
-    public void setRearShootingSpeed (double speed){}
+    private void setRearShootingSpeed (double rpm){
+        rearShootingandIntakeMotor.set(rpm);
+    }
 
     public void setSpinUpShooters (){
         setFrontShootingSpeed(FRONT_MOTOR_SHOOTING_RPM);
         setRearShootingSpeed(REAR_MOTOR_SHOOTING_RPM);
 
+    }
+
+    public void spitOutFuel (){
+        setRearShootingSpeed(SPIT_OUT_RPM);
+    }
+
+    public void intakeFuel (){
+        setRearShootingSpeed(INTAKE_RPM);
     }
 
     public void stopShooterMotors (){
@@ -106,4 +123,8 @@ public class Shooting extends Subsystem {
     public void setShootLow(){
         setHighOrLowMotorPosition(LOW_DEGREE_VALUE);
     }
+
+    public double getFrontShootingSpeed(){return frontShootingMotor.get();}
+
+    public double getRearShootingSpeed(){return rearShootingandIntakeMotor.get();}
 }

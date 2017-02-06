@@ -6,13 +6,12 @@ import org.usfirst.frc.team3546.robot.Robot;
 import org.usfirst.frc.team3546.robot.StopWhen;
 
 /**
- * Created by User on 2/3/2017.
+ * Not Created by Andrew at anytime anywhere.
  */
 public class DriveStraight extends Command {
     public static final double DEFUALT_DRIVING_SPEED = .7;
     public static final double EMERGENCY_TIMEOUT = 6;
     public static final int TIMES_AT_TARGET_NEEDED = 10;
-    public static final double CHEVAL_ANGLE_THRESHOLD = 15;
     public static final double JERK_THRESHOLD = .9;
 
     private int times_at_target = 0;
@@ -103,8 +102,6 @@ public class DriveStraight extends Command {
             if (Robot.gyro.isLevel()) times_at_target++;
             else times_at_target = 0;
             return times_at_target > TIMES_AT_TARGET_NEEDED;
-        } else if (stopWhen == StopWhen.ChevalAngle) {
-            return Robot.gyro.getRobotPitch() > CHEVAL_ANGLE_THRESHOLD;
         } else if (stopWhen == StopWhen.Collision){
             return checkJerk();
         } else {

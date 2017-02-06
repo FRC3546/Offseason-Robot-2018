@@ -19,8 +19,7 @@ public class ShootHigh extends Command{
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.shooting.setFrontShootingSpeed(-100);
-        Robot.shooting.setRearShootingSpeed(100);
+        Robot.shooting.setSpinUpShooters();
         Robot.ballSorting.spinFrontIntakeandStorageMotorCounterClockwise();
     }
 
@@ -31,8 +30,7 @@ public class ShootHigh extends Command{
 
     // Called once after isFinished returns true
     protected void end() {
-        Robot.shooting.setFrontShootingSpeed(0);
-        Robot.shooting.setRearShootingSpeed(0);
+        Robot.shooting.stopShooterMotors();
         Robot.ballSorting.spinFrontIntakeandStorageMotorOff();
     }
 

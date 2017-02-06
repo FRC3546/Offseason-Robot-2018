@@ -13,10 +13,6 @@ import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 public class RobotMap {
 	
 	public static RobotDrive driveTrainMotors;
-	public static SpeedController drivetrainBackRightMotor;
-	public static SpeedController drivetrainBackLeftMotor;
-	public static SpeedController drivetrainFrontRightMotor;
-	public static SpeedController drivetrainFrontLeftMotor;
 	public static DoubleSolenoid shifterPositionSolenoid;
 	public static DoubleSolenoid clampPositionSolenoid;
 	public static DoubleSolenoid gearGrabSolenoid;

@@ -19,7 +19,7 @@ public class FuelIntake extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.shooting.setRearShootingSpeed(-100);
+        Robot.shooting.intakeFuel();
         Robot.ballSorting.spinFrontIntakeandStorageMotorClockwise();
     }
 
@@ -30,7 +30,7 @@ public class FuelIntake extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-        Robot.shooting.setRearShootingSpeed(0);
+        Robot.shooting.stopShooterMotors();
         Robot.ballSorting.spinFrontIntakeandStorageMotorOff();
     }
 
