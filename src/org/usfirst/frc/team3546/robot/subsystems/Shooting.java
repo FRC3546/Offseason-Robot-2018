@@ -42,10 +42,10 @@ public class Shooting extends Subsystem {
     public static final double LOW_DEGREE_VALUE = 1040;
 
     public static final double FRONT_MOTOR_SHOOTING_RPM = 100;
-    public static final double REAR_MOTOR_SHOOTING_RPM = 100;
+    public static final double REAR_MOTOR_SHOOTING_RPM = -100;
 
-    public static final double SPIT_OUT_RPM = -100;
-    public static final double INTAKE_RPM = 100;
+    public static final double REAR_MOTOR_SPIT_OUT_RPM = 100;
+    public static final double REAR_MOTOR_INTAKE_RPM = -100;
 
 
     @Override
@@ -100,11 +100,11 @@ public class Shooting extends Subsystem {
     }
 
     public void spitOutFuel (){
-        setRearShootingSpeed(SPIT_OUT_RPM);
+        setRearShootingSpeed(REAR_MOTOR_SPIT_OUT_RPM);
     }
 
     public void intakeFuel (){
-        setRearShootingSpeed(INTAKE_RPM);
+        setRearShootingSpeed(REAR_MOTOR_INTAKE_RPM);
     }
 
     public void stopShooterMotors (){
