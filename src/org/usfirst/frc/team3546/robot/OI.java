@@ -12,34 +12,31 @@ public class OI {
 	
 	public Joystick leftJoystick;
 	public Joystick rightJoystick;
+	public Joystick coDrivingJoystick;
 
 	public JoystickButton lowGearButton;
 	public JoystickButton highGearButton;
 
-	public JoystickButton invertDriveTrainButton;
-
 	public JoystickButton forwardDriveButton;
 	public JoystickButton reverseDriveButton;
 
+	public JoystickButton fuelIntakeButton;
+	public JoystickButton shootHighButton;
+	public JoystickButton shootLowButton;
+	public JoystickButton spitOutFuelButton;
+
+	public JoystickButton closeandGoUpButton;
+	public JoystickButton closeandGoDownButton;
+	public JoystickButton gearOpenButton;
+	public JoystickButton gearCloseButton;
+
 	public JoystickButton climbingButton;
-
-	public JoystickButton printPotentiometerButton;
-
-
-
 
 
 	public OI (){
 		leftJoystick = new Joystick(0);
 		rightJoystick = new Joystick(1);
-		
-		//sweeperBarRotationInButton = new JoystickButton(leftJoystick,1);
-		//sweeperBarRotationInButton.whileHeld(new SweeperBarRotationIn());
-		//sweeperBarRotationOutButton = new JoystickButton(leftJoystick,2);
-		//sweeperBarRotationOutButton.whileHeld(new SweeperBarRotationOut());
-
-		//printPotentiometerButton = new JoystickButton(leftJoystick, 4);
-		//printPotentiometerButton.whenPressed(new PrintPotentiometer());
+		coDrivingJoystick = new Joystick(2);
 
 		forwardDriveButton = new JoystickButton(rightJoystick, 3);
 		forwardDriveButton.whenPressed(new ForwardDrive());
@@ -51,12 +48,31 @@ public class OI {
 		lowGearButton = new JoystickButton(leftJoystick, 2);
 		lowGearButton.whenPressed(new DriveTrainLowGear());
 
-		climbingButton = new JoystickButton(rightJoystick, 5);
+		fuelIntakeButton = new JoystickButton(coDrivingJoystick, 1);
+		fuelIntakeButton.whileHeld(new FuelIntake());
+		shootHighButton = new JoystickButton(coDrivingJoystick, 3);
+		shootHighButton.whileHeld(new ShootHigh());
+		shootLowButton = new JoystickButton(coDrivingJoystick, 2);
+		shootLowButton.whileHeld((new ShootLow()));
+		spitOutFuelButton = new JoystickButton(coDrivingJoystick, 4);
+		spitOutFuelButton.whileHeld(new FuelOutput());
+
+		closeandGoUpButton = new JoystickButton(coDrivingJoystick, 6);
+		closeandGoUpButton.whenPressed(new CloseandGoUp());
+		closeandGoDownButton = new JoystickButton(coDrivingJoystick, 7);
+		closeandGoDownButton.whenPressed(new CloseandGoDown());
+		gearOpenButton = new JoystickButton(coDrivingJoystick, 8);
+		gearOpenButton.whenPressed(new SetGearRelease());
+		gearCloseButton = new JoystickButton(coDrivingJoystick, 8);
+		gearCloseButton.whenReleased(new SetGearGrab());
+
+		climbingButton = new JoystickButton(rightJoystick, 11);
 		climbingButton.whileHeld(new Climb());
 		}
 	
 	public Joystick getLeftJoystick() { return leftJoystick; }
 	public Joystick getRightJoystick() { return rightJoystick; }
+	public Joystick getCoDrivingJoystick() { return coDrivingJoystick; }
 	
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.

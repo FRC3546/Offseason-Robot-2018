@@ -38,13 +38,13 @@ public class RobotMap {
 		shootingorStorageGuidePotentiometer = new AnalogPotentiometer(0,3600,0);
 		highorLowShootingGuidePotentiometer = new AnalogPotentiometer(1,3600,0);
 
-		climbingMotor = new VictorSP(4);
-		highorLowShootingGuideMotor = new VictorSP(5);
-		frontIntakeandStorageMotor = new VictorSP(6);
-		shootingorStorageGuideMotor = new VictorSP(7);
+		climbingMotor = new Spark(4);
+		highorLowShootingGuideMotor = new Spark(5);
+		frontIntakeandStorageMotor = new Spark(6);
+		shootingorStorageGuideMotor = new Spark(7);
 
-		rearShootingandIntakeMotor = new CANTalon(0);
-		frontShootingMotor = new CANTalon(1);
+		rearShootingandIntakeMotor = new CANTalon(1);
+		frontShootingMotor = new CANTalon(2);
 
 		driveTrainMotors = new RobotDrive(frontLeftMotor, backLeftMotor, frontRightMotor, backRightMotor);
 
