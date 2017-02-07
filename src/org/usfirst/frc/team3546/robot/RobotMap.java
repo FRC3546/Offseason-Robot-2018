@@ -24,9 +24,6 @@ public class RobotMap {
 	public static CANTalon frontShootingMotor;
 	public static SpeedController frontIntakeandStorageMotor;
 	public static SpeedController shootingorStorageGuideMotor;
-
-	public static Encoder drivetrainRightDrivetrainEncoder;
-	public static Encoder drivetrainLeftDrivetrainEncoder;
 	
 	public static void init(){
 		
