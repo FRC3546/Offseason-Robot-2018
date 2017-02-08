@@ -33,6 +33,7 @@ Robot extends IterativeRobot {
 	public static Gyro gyro;
 	public static Shooting shooting;
 	public static BallSorting ballSorting;
+	public static LEDStrips ledStrips;
 
            Command autonomousCommand;
            Command driveCommand;
@@ -52,6 +53,7 @@ Robot extends IterativeRobot {
             gyro = new Gyro();
             shooting = new Shooting();
             ballSorting = new BallSorting();
+            ledStrips = new LEDStrips();
 
             gyro.zeroYaw();
 

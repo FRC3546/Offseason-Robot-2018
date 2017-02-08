@@ -24,6 +24,8 @@ public class RobotMap {
 	public static CANTalon frontShootingMotor;
 	public static SpeedController frontIntakeandStorageMotor;
 	public static SpeedController shootingorStorageGuideMotor;
+	public static Relay frontLEDStripRelay;
+	public static Relay rearLEDStripRelay;
 	
 	public static void init(){
 		
@@ -44,6 +46,9 @@ public class RobotMap {
 		frontShootingMotor = new CANTalon(2);
 
 		driveTrainMotors = new RobotDrive(frontLeftMotor, backLeftMotor, frontRightMotor, backRightMotor);
+
+		frontLEDStripRelay = new Relay(0);
+		rearLEDStripRelay = new Relay(1);
 
 		driveTrainMotors.setSafetyEnabled(false);
 		driveTrainMotors.setExpiration(.1);
