@@ -14,8 +14,8 @@ public class LEDStrips extends Subsystem{
     private final Relay rearLedStripRelay = RobotMap.rearLEDStripRelay;
 
     public void turnOnFrontLEDStrip () {frontLedStripRelay.set(Relay.Value.kForward);}
-    public void turnOffFrontLEDStrip () {frontLedStripRelay.set(Relay.Value.kReverse);}
+    public void turnOffFrontLEDStrip () {frontLedStripRelay.set(Relay.Value.kOff);}
 
     public void turnOnRearLEDStrip () {rearLedStripRelay.set(Relay.Value.kForward);}
-    public void turnOffRearLEDStrip () {rearLedStripRelay.set(Relay.Value.kReverse);}
+    public void turnOffRearLEDStrip () {rearLedStripRelay.set(Relay.Value.kOff);}
 }

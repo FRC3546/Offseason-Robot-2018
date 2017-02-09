@@ -66,7 +66,7 @@ public class OI {
 		gearCloseButton = new JoystickButton(coDrivingJoystick, 8);
 		gearCloseButton.whenReleased(new SetGearGrab());
 
-		climbingButton = new JoystickButton(rightJoystick, 11);
+		climbingButton = new JoystickButton(coDrivingJoystick, 11);
 		climbingButton.whileHeld(new Climb());
 		}
 	
