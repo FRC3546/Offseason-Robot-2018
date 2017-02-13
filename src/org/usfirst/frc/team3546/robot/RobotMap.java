@@ -59,7 +59,7 @@ public class RobotMap {
 		//inverts the direction of all motors
 		//driveTrainMotors.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
 		//driveTrainMotors.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
-		//driveTrainMotors.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+		driveTrainMotors.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		//driveTrainMotors.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 
 		shifterPositionSolenoid = new DoubleSolenoid(0, 0, 1);

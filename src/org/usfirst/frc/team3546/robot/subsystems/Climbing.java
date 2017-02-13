@@ -13,9 +13,9 @@ public class Climbing extends Subsystem{
 
     private final SpeedController climbingMotor = RobotMap.climbingMotor;
 
-    public static final double CLIMBING_SPEED = .5;
+    public static final double CLIMBING_SPEED = .4;
 
-    public void climbingMotorClimb(){climbingMotor.set(CLIMBING_SPEED);}
+    public void climbingMotorClimb(){climbingMotor.set(-CLIMBING_SPEED);}
 
-    public void climbingMotorOff(){climbingMotorOff();}
+    public void climbingMotorOff(){climbingMotor.set(0);}
 }

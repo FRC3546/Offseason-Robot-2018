@@ -10,8 +10,8 @@ public class Shifter extends Subsystem {
 
 	private final DoubleSolenoid shifterPositionSolenoid = RobotMap.shifterPositionSolenoid;
 	
-	public static final DoubleSolenoid.Value LOW_GEAR = DoubleSolenoid.Value.kForward;
-	public static final DoubleSolenoid.Value HIGH_GEAR = DoubleSolenoid.Value.kReverse;
+	public static final DoubleSolenoid.Value LOW_GEAR = DoubleSolenoid.Value.kReverse;
+	public static final DoubleSolenoid.Value HIGH_GEAR = DoubleSolenoid.Value.kForward;
 
 
 public void setHighGear() { shifterPositionSolenoid.set(HIGH_GEAR); }

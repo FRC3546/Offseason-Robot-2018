@@ -13,7 +13,7 @@ import org.usfirst.frc.team3546.robot.RobotMap;
  */
 public class Shooting extends Subsystem {
 
-    public static final double REAR_SHOOTING_PID_P = .1;
+    public static final double REAR_SHOOTING_PID_P = .5;
     public static final double REAR_SHOOTING_PID_I = 0;
     public static final double REAR_SHOOTING_PID_D = 0;
 
@@ -21,7 +21,7 @@ public class Shooting extends Subsystem {
     //HOW LONG IT TAKES TO SPEED UP TO FULL SPEED
     //MAX VOLTS IS 12
     //4 WOULD TAKE ~ 3 SECONDS TO SPIN UP
-    public static final double REAR_SHOOTING_PID_MAX_RATE = 4;
+    public static final double REAR_SHOOTING_PID_MAX_RATE = 1;
 
     public static final double FRONT_SHOOTING_PID_P = .1;
     public static final double FRONT_SHOOTING_PID_I = 0;
@@ -31,7 +31,7 @@ public class Shooting extends Subsystem {
     //HOW LONG IT TAKES TO SPEED UP TO FULL SPEED
     //MAX VOLTS IS 12
     //4 WOULD TAKE ~ 3 SECONDS TO SPIN UP
-    public static final double FRONT_SHOOTING_PID_MAX_RATE = 4;
+    public static final double FRONT_SHOOTING_PID_MAX_RATE = 1;
 
     public static final double HIGH_OR_LOW_SHOOTING_GUIDE_MOTOR_PID_P = .1;
     public static final double HIGH_OR_LOW_SHOOTING_GUIDE_MOTOR_PID_I = 0;
@@ -41,11 +41,11 @@ public class Shooting extends Subsystem {
     public static final double HIGH_DEGREE_VALUE = 1000;
     public static final double LOW_DEGREE_VALUE = 1040;
 
-    public static final double FRONT_MOTOR_SHOOTING_RPM = 100;
-    public static final double REAR_MOTOR_SHOOTING_RPM = -100;
+    public static final double FRONT_MOTOR_SHOOTING_RPM = 25;
+    public static final double REAR_MOTOR_SHOOTING_RPM = -25;
 
-    public static final double REAR_MOTOR_SPIT_OUT_RPM = 100;
-    public static final double REAR_MOTOR_INTAKE_RPM = -100;
+    public static final double REAR_MOTOR_SPIT_OUT_RPM = 25;
+    public static final double REAR_MOTOR_INTAKE_RPM = -25;
 
 
     @Override

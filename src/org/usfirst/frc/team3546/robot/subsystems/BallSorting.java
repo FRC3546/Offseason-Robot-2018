@@ -52,7 +52,7 @@ public class BallSorting extends Subsystem {
 
     private final SpeedController frontIntakeandStorageMotor = RobotMap.frontIntakeandStorageMotor;
 
-    public static final double FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED = 1;
+    public static final double FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED = .4;
 
     public void spinFrontIntakeandStorageMotorClockwise(){frontIntakeandStorageMotor.set(FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED);}
 
