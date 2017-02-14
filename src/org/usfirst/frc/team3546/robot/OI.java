@@ -38,7 +38,7 @@ public class OI {
 		rightJoystick = new Joystick(1);
 		coDrivingJoystick = new Joystick(2);
 
-		forwardDriveButton = new JoystickButton(rightJoystick, 3);
+		forwardDriveButton = new JoystickButton(rightJoystick,3);
 		forwardDriveButton.whenPressed(new ForwardDrive());
 		reverseDriveButton = new JoystickButton(rightJoystick, 2);
 		reverseDriveButton.whenPressed(new ReverseDrive());

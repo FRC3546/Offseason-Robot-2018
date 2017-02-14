@@ -14,6 +14,10 @@ public class PrintPotentiometer extends InstantCommand {
     public PrintPotentiometer(){}
 
     // Called just before this Command runs the first time
-    protected void initialize() { System.out.println("Potentiometer Angle: " +
-            Robot.shooting.getHighorLowShootingGuidePotentiometerAngle());}
+    protected void initialize() {
+        //System.out.println("Potentiometer Angle: " + Robot.shooting.getHighorLowShootingGuidePotentiometerAngle());
+       // System.out.println("FRONT" + Robot.shooting.getFrontShootingSpeed());
+        //System.out.println("REAR                            " + Robot.shooting.getRearShootingSpeed());
+
+         }
 }

@@ -23,7 +23,7 @@ public class Shooting extends Subsystem {
     //4 WOULD TAKE ~ 3 SECONDS TO SPIN UP
     public static final double REAR_SHOOTING_PID_MAX_RATE = 1;
 
-    public static final double FRONT_SHOOTING_PID_P = .1;
+    public static final double FRONT_SHOOTING_PID_P = .5;
     public static final double FRONT_SHOOTING_PID_I = 0;
     public static final double FRONT_SHOOTING_PID_D = 0;
 

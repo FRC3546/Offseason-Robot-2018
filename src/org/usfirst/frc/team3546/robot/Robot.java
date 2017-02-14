@@ -55,7 +55,7 @@ Robot extends IterativeRobot {
             ballSorting = new BallSorting();
             ledStrips = new LEDStrips();
 
-            gyro.zeroYaw();
+            //gyro.zeroYaw();
 
             new Thread(() -> {
             UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
@@ -129,16 +129,12 @@ Robot extends IterativeRobot {
         if (autonomousCommand != null) autonomousCommand.cancel();
         driveCommand = new Drive();
         driveCommand.start();
-        PrintPotentiometer printPotentiometer = new PrintPotentiometer();
-        printPotentiometer.start();
     }
 
     /**
      * This function is called periodically during operator control
      */
-    public void teleopPeriodic() {
-        Scheduler.getInstance().run();
-    }
+    public void teleopPeriodic() {}
     
     /**
      * This function is called periodically during test mode
