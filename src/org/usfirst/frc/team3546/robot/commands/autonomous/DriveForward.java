@@ -14,21 +14,17 @@ public class DriveForward extends Command{
 
 
     protected void execute() {
-        Robot.robotDriveTrain.setMotorOutputs(-.75, -.75);
+        //Robot.robotDriveTrain.setMotorOutputs(-.75, -.75);
     }
 
 
     protected boolean isFinished() {
-        if(timeSinceInitialized() > 2) {
-            return true;
-        }else{
-            return false;
-        }
+        return false;
     }
 
 
     protected void end() {
-        Robot.robotDriveTrain.stop();
+        //Robot.robotDriveTrain.stop();
 
     }
 

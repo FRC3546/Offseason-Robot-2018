@@ -14,11 +14,13 @@ public class Climb extends Command{
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.gearManipulation.setClampDown();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.climbing.climbingMotorClimb();
+        if(Robot.oi.getClimbingSpeed() <= 0){ Robot.climbing.climbingMotorClimb(Robot.oi.getClimbingSpeed());}
+        else{Robot.climbing.climbingMotorOff();}
     }
 
     // Make this return true when this Command no longer needs to run execute()

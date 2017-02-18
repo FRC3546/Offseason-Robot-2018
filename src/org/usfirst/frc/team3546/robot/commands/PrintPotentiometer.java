@@ -9,15 +9,32 @@ import org.usfirst.frc.team3546.robot.Robot;
 /**
  * Created by User on 1/28/2017.
  */
-public class PrintPotentiometer extends InstantCommand {
+public class PrintPotentiometer extends Command {
 
-    public PrintPotentiometer(){}
+    public PrintPotentiometer() {
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
+    }
 
     // Called just before this Command runs the first time
-    protected void initialize() {
-        //System.out.println("Potentiometer Angle: " + Robot.shooting.getHighorLowShootingGuidePotentiometerAngle());
-       // System.out.println("FRONT" + Robot.shooting.getFrontShootingSpeed());
-        //System.out.println("REAR                            " + Robot.shooting.getRearShootingSpeed());
+    protected void initialize() {}
 
-         }
+    // Called repeatedly when this Command is scheduled to run
+    protected void execute() {
+        //System.out.println("Angle: " + Robot.shooting.getHighorLowShootingGuidePotentiometerAngle());
+    }
+
+    // Make this return true when this Command no longer needs to run execute()
+    protected boolean isFinished() {
+        return false;
+    }
+
+    // Called once after isFinished returns true
+    protected void end() {}
+
+    // Called when another command which requires one or more of the same
+    // subsystems is scheduled to run
+    protected void interrupted() {
+        end();
+    }
 }

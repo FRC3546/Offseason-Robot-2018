@@ -2,7 +2,6 @@ package org.usfirst.frc.team3546.robot;
 import org.usfirst.frc.team3546.robot.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import org.usfirst.frc.team3546.robot.subsystems.Climbing;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -31,7 +30,13 @@ public class OI {
 	public JoystickButton gearCloseButton;
 
 	public JoystickButton climbingButton;
+	public JoystickButton climbingReverseButton;
 
+	public JoystickButton shootsorthighButton;
+	public JoystickButton shootsortlowButton;
+
+	public JoystickButton storagesorthighButton;
+	public JoystickButton storagesortlowButton;
 
 	public OI (){
 		leftJoystick = new Joystick(0);
@@ -58,9 +63,9 @@ public class OI {
 		spitOutFuelButton.whileHeld(new FuelOutput());
 
 		closeandGoUpButton = new JoystickButton(coDrivingJoystick, 6);
-		closeandGoUpButton.whenPressed(new CloseandGoUp());
+		closeandGoUpButton.whenPressed(new SetClampUp());
 		closeandGoDownButton = new JoystickButton(coDrivingJoystick, 7);
-		closeandGoDownButton.whenPressed(new CloseandGoDown());
+		closeandGoDownButton.whenPressed(new SetClampDown());
 		gearOpenButton = new JoystickButton(coDrivingJoystick, 8);
 		gearOpenButton.whenPressed(new SetGearRelease());
 		gearCloseButton = new JoystickButton(coDrivingJoystick, 8);
@@ -68,11 +73,30 @@ public class OI {
 
 		climbingButton = new JoystickButton(coDrivingJoystick, 11);
 		climbingButton.whileHeld(new Climb());
+		climbingReverseButton = new JoystickButton(coDrivingJoystick, 10);
+		climbingReverseButton.whileHeld(new ClimbReverse());
+
+		shootsorthighButton = new JoystickButton(rightJoystick, 6);
+		shootsorthighButton.whileHeld(new MoveShooterDeflectorUp());
+		shootsortlowButton = new JoystickButton(rightJoystick, 7);
+		shootsortlowButton.whileHeld(new MoveShooterDeflectorDown());
+
+		storagesorthighButton = new JoystickButton(leftJoystick, 11);
+		storagesorthighButton.whileHeld(new MoveSortingDeflectorUp());
+		storagesortlowButton = new JoystickButton(leftJoystick, 10);
+		storagesortlowButton.whileHeld(new MoveSortingDeflectorDown());
+
+		//storagesorthighButton = new JoystickButton(rightJoystick, 11);
+		//storagesorthighButton.whenPressed(new MoveSortingDeflectorUp());
+		//storagesortlowButton = new JoystickButton(rightJoystick, 10);
+		//storagesortlowButton.whenPressed(new MoveSortingDeflectorDown());
+
 		}
 	
 	public Joystick getLeftJoystick() { return leftJoystick; }
 	public Joystick getRightJoystick() { return rightJoystick; }
 	public Joystick getCoDrivingJoystick() { return coDrivingJoystick; }
+	public double getClimbingSpeed() {return coDrivingJoystick.getAxis(Joystick.AxisType.kY);}
 	
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.

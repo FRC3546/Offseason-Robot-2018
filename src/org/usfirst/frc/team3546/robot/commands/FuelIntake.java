@@ -14,7 +14,7 @@ public class FuelIntake extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.ballSorting.setSortHigh();
+        //Robot.ballSorting.setSortHigh();
     }
 
     // Called repeatedly when this Command is scheduled to run

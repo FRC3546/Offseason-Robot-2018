@@ -4,23 +4,23 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team3546.robot.Robot;
 
 /**
- * Created by User on 2/4/2017.
+ * Created by User on 2/2/2017.
  */
-public class ShootLow extends Command{
-    public ShootLow() {
+public class ClimbReverse extends Command{
+    public ClimbReverse() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        //Robot.shooting.setShootLow();
+        Robot.gearManipulation.setClampDown();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.shooting.setSpinUpShooters();
-        Robot.ballSorting.spinFrontIntakeandStorageMotorCounterClockwise();
+        if(Robot.oi.getClimbingSpeed() >= 0 && Robot.oi.climbingReverseButton.get()){ Robot.climbing.climbingMotorClimb(.6*Robot.oi.getClimbingSpeed());}
+        else{Robot.climbing.climbingMotorOff();}
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,8 +30,7 @@ public class ShootLow extends Command{
 
     // Called once after isFinished returns true
     protected void end() {
-        Robot.shooting.stopShooterMotors();
-        Robot.ballSorting.spinFrontIntakeandStorageMotorOff();
+        Robot.climbing.climbingMotorOff();
     }
 
     // Called when another command which requires one or more of the same
@@ -40,3 +39,4 @@ public class ShootLow extends Command{
         end();
     }
 }
+

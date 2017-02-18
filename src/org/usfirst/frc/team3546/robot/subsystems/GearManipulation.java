@@ -13,12 +13,14 @@ public class GearManipulation extends Subsystem{
 
     private final DoubleSolenoid clampPositionSolenoid = RobotMap.clampPositionSolenoid;
 
-        public void setClampDown() { clampPositionSolenoid.set(DoubleSolenoid.Value.kForward);}
-        public void setClampUp() { clampPositionSolenoid.set(DoubleSolenoid.Value.kReverse);}
+        public void setClampDown() { clampPositionSolenoid.set(DoubleSolenoid.Value.kReverse);}
+        public void setClampUp() { clampPositionSolenoid.set(DoubleSolenoid.Value.kForward);}
 
     private final DoubleSolenoid gearGrabSolenoid = RobotMap.gearGrabSolenoid;
 
-        public void setGearGrab() { gearGrabSolenoid.set(DoubleSolenoid.Value.kForward);}
-        public void setGearRelease() { gearGrabSolenoid.set(DoubleSolenoid.Value.kReverse);}
+        public void setGearGrab() { gearGrabSolenoid.set(DoubleSolenoid.Value.kReverse);}
+        public void setGearRelease() { gearGrabSolenoid.set(DoubleSolenoid.Value.kForward);}
+
+    public boolean isClampClosed(){ return clampPositionSolenoid.get() == DoubleSolenoid.Value.kReverse;}
 
 }

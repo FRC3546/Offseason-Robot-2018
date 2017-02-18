@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 import org.usfirst.frc.team3546.robot.RobotMap;
+import org.usfirst.frc.team3546.robot.commands.MoveShooterDeflectorDown;
 
 /**
  * Created by User on 2/3/2017.
@@ -16,6 +17,8 @@ public class BallSorting extends Subsystem {
     public static final double SHOOTING_OR_STORAGE_GUIDE_MOTOR_PID_P = .1;
     public static final double SHOOTING_OR_STORAGE_GUIDE_MOTOR_PID_I = 0;
     public static final double SHOOTING_OR_STORAGE_GUIDE_MOTOR_PID_D = 0;
+
+    public static final double SHOOTING_OR_STORAGE_GUIDE_MOTOR_SPEED = .3;
 
     public static final double HIGH_DEGREE_VALUE = 1000;
     public static final double LOW_DEGREE_VALUE = 1040;
@@ -43,21 +46,35 @@ public class BallSorting extends Subsystem {
     }
 
 
+    public void moveSortingDeflectorDown(){shootingorStorageGuideMotor.set(-SHOOTING_OR_STORAGE_GUIDE_MOTOR_SPEED);}
+
+    public void moveSortingDeflectorUp(){ shootingorStorageGuideMotor.set(SHOOTING_OR_STORAGE_GUIDE_MOTOR_SPEED);}
+
+    public void moveSortingDeflectorOff(){ shootingorStorageGuideMotor.set(0);}
+
+
     private static Potentiometer shootingorStorageGuidePotentiometer = RobotMap.shootingorStorageGuidePotentiometer;
     public double getShootingorStorageGuidePotentiometerAngle(){
         return shootingorStorageGuidePotentiometer.get();
     }
 
-    private SpeedController shootingorStorageGuideMotor = RobotMap.shootingorStorageGuideMotor;
+    //      final
+    private final SpeedController shootingorStorageGuideMotor = RobotMap.shootingorStorageGuideMotor;
 
     private final SpeedController frontIntakeandStorageMotor = RobotMap.frontIntakeandStorageMotor;
 
     public static final double FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED = .4;
 
-    public void spinFrontIntakeandStorageMotorClockwise(){frontIntakeandStorageMotor.set(FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED);}
+    public void spinFrontIntakeandStorageMotorClockwise(){
+        frontIntakeandStorageMotor.set(FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED);
+    }
 
-    public void spinFrontIntakeandStorageMotorCounterClockwise(){frontIntakeandStorageMotor.set(-FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED);}
+    public void spinFrontIntakeandStorageMotorCounterClockwise(){
+        frontIntakeandStorageMotor.set(-FRONT_INTAKE_AND_STORAGE_MOTOR_SPEED);
+    }
 
-    public void spinFrontIntakeandStorageMotorOff(){frontIntakeandStorageMotor.set(0);}
+    public void spinFrontIntakeandStorageMotorOff(){
+        frontIntakeandStorageMotor.set(0);
+    }
 }
 

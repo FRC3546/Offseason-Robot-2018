@@ -4,23 +4,21 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team3546.robot.Robot;
 
 /**
- * Created by User on 2/4/2017.
+ * Created by User on 2/15/2017.
  */
-public class ShootLow extends Command{
-    public ShootLow() {
+public class MoveSortingDeflectorDown extends Command{
+    public MoveSortingDeflectorDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        //Robot.shooting.setShootLow();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.shooting.setSpinUpShooters();
-        Robot.ballSorting.spinFrontIntakeandStorageMotorCounterClockwise();
+        Robot.ballSorting.moveSortingDeflectorDown();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,8 +28,7 @@ public class ShootLow extends Command{
 
     // Called once after isFinished returns true
     protected void end() {
-        Robot.shooting.stopShooterMotors();
-        Robot.ballSorting.spinFrontIntakeandStorageMotorOff();
+        Robot.ballSorting.moveSortingDeflectorOff();
     }
 
     // Called when another command which requires one or more of the same
@@ -40,3 +37,4 @@ public class ShootLow extends Command{
         end();
     }
 }
+

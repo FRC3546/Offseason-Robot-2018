@@ -14,5 +14,13 @@ public class SetClampDown extends InstantCommand {
     }
 
     // Called just before this Command runs the first time
-    protected void initialize() { Robot.gearManipulation.setClampDown(); }
+    protected void initialize() {
+        if (Robot.gearManipulation.isClampClosed()) {
+            Robot.gearManipulation.setClampDown();
+        }
+        else{
+            Robot.gearManipulation.setGearGrab();
+            Robot.gearManipulation.setClampDown();
+        }
+    }
 }
