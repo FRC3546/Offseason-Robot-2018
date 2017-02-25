@@ -11,14 +11,11 @@ import javax.security.auth.Subject;
  * Created by User on 2/24/2017.
  */
 public class Camera extends Subsystem {
-    Camera camera;
 
     public Camera() {
         try {
             UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
             camera.setResolution(360, 240);
-            camera.setFPS(8);
-            //cameraServer.setQuality(50);
         } catch (Exception e) {
             DriverStation.reportError("Camera 'cam0' not found. Is it plugged in?", false);
         }

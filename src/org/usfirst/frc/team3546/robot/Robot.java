@@ -10,8 +10,9 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team3546.robot.commands.Drive;
 import org.usfirst.frc.team3546.robot.commands.PrintPotentiometer;
-import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForwardAt60;
-import org.usfirst.frc.team3546.robot.commands.autonomous.DriveForwardStraight;
+import org.usfirst.frc.team3546.robot.commands.autonomous.BlueAlliancePlaceGearLeft;
+import org.usfirst.frc.team3546.robot.commands.autonomous.BlueAlliancePlaceGearRight;
+import org.usfirst.frc.team3546.robot.commands.autonomous.PlaceGearCenter;
 import org.usfirst.frc.team3546.robot.subsystems.*;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -66,15 +67,12 @@ Robot extends IterativeRobot {
             //camera.setFPS(8);
         //}).start();
 
-        //autonomousCommand = new DriveForward();
-        //testing
+
 
         autoChooser = new SendableChooser();
-        autoChooser.addDefault("Drive Straight", new DriveForwardStraight());
-        autoChooser.addObject("Drive from right side", new DriveForwardAt60());
-        //autoChooser.addDefault("Drive Straight Turn at Angle", new Drive());
-        //chooser.addDefault("Default Auto", new ExampleCommand());
-//        chooser.addObject("My Auto", new MyAutoCommand());
+        autoChooser.addDefault("LEFT", new BlueAlliancePlaceGearLeft());
+        autoChooser.addObject("CENTER", new PlaceGearCenter());
+        autoChooser.addObject("RIGHT", new BlueAlliancePlaceGearRight());
         SmartDashboard.putData("Auto mode", autoChooser);
     }
 	
