@@ -14,7 +14,7 @@ public class DriveForward extends Command{
 
 
     protected void execute() {
-        //Robot.robotDriveTrain.setMotorOutputs(-.75, -.75);
+        Robot.robotDriveTrain.setMotorOutputs(-.75, -.75);
     }
 
 
@@ -24,7 +24,7 @@ public class DriveForward extends Command{
 
 
     protected void end() {
-        //Robot.robotDriveTrain.stop();
+        Robot.robotDriveTrain.stop();
 
     }
 

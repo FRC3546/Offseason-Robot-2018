@@ -13,8 +13,8 @@ import org.usfirst.frc.team3546.robot.StopWhen;
  * Not Created by Andrew anytime anywhere.
  */
 public class DriveAtAngle extends Command implements PIDOutput, PIDSource {
-
-    public static final double P = 0.08;
+    //                              .08
+    public static final double P = 0.05;
     public static final double I = 0;
     public static final double D = 0;
 
@@ -46,7 +46,7 @@ public class DriveAtAngle extends Command implements PIDOutput, PIDSource {
     }
 
 
-    private DriveAtAngle(double angle, double forward_output){
+    public DriveAtAngle(double angle, double forward_output){
         turnController = new PIDController(P, I, D, this, this);
         turnController.setInputRange(-180, 180);
         turnController.setContinuous(true);
