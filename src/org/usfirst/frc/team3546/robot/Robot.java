@@ -35,6 +35,7 @@ Robot extends IterativeRobot {
 	public static Shooting shooting;
 	public static BallSorting ballSorting;
 	public static LEDStrips ledStrips;
+	public static Camera camera;
 
            Command autonomousCommand;
            Command driveCommand;
@@ -55,14 +56,15 @@ Robot extends IterativeRobot {
             shooting = new Shooting();
             ballSorting = new BallSorting();
             ledStrips = new LEDStrips();
+            camera = new Camera();
 
             gyro.zeroYaw();
 
-            new Thread(() -> {
-            UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-            camera.setResolution(360, 240);
-            camera.setFPS(8);
-        }).start();
+            //new Thread(() -> {
+            //UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+            //camera.setResolution(360, 240);
+            //camera.setFPS(8);
+        //}).start();
 
         //autonomousCommand = new DriveForward();
         //testing
