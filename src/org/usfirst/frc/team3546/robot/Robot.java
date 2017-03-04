@@ -12,6 +12,7 @@ import org.usfirst.frc.team3546.robot.commands.Drive;
 import org.usfirst.frc.team3546.robot.commands.PrintPotentiometer;
 import org.usfirst.frc.team3546.robot.commands.autonomous.BlueAlliancePlaceGearLeft;
 import org.usfirst.frc.team3546.robot.commands.autonomous.BlueAlliancePlaceGearRight;
+import org.usfirst.frc.team3546.robot.commands.autonomous.DoNothing;
 import org.usfirst.frc.team3546.robot.commands.autonomous.PlaceGearCenter;
 import org.usfirst.frc.team3546.robot.subsystems.*;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -70,9 +71,10 @@ Robot extends IterativeRobot {
 
 
         autoChooser = new SendableChooser();
-        autoChooser.addDefault("LEFT", new BlueAlliancePlaceGearLeft());
-        autoChooser.addObject("CENTER", new PlaceGearCenter());
+        autoChooser.addObject("LEFT", new BlueAlliancePlaceGearLeft());
+        autoChooser.addDefault("CENTER", new PlaceGearCenter());
         autoChooser.addObject("RIGHT", new BlueAlliancePlaceGearRight());
+        autoChooser.addObject("Do Nothing", new DoNothing());
         SmartDashboard.putData("Auto mode", autoChooser);
     }
 	
