@@ -14,5 +14,8 @@ public class SetGearGrab extends InstantCommand{
     }
 
     // Called just before this Command runs the first time
-    protected void initialize() { Robot.gearManipulation.setGearGrab(); }
+    protected void initialize() {
+        Robot.gearManipulation.setGearGrab();
+        Robot.ledStrips.turnOnFrontLEDStrip();
+    }
 }

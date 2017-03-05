@@ -17,7 +17,7 @@ public class ReverseDrive  extends InstantCommand {
     // Called just before this Command runs the first time
     protected void initialize() {
         Robot.robotDriveTrain.ReverseDrive();
-        Robot.ledStrips.turnOffFrontLEDStrip();
-        Robot.ledStrips.turnOnRearLEDStrip();
+        //Robot.ledStrips.turnOffFrontLEDStrip();
+        //Robot.ledStrips.turnOnRearLEDStrip();
     }
 }

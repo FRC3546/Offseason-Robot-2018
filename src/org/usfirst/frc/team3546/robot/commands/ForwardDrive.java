@@ -17,8 +17,8 @@ public class ForwardDrive  extends InstantCommand {
     // Called just before this Command runs the first time
     protected void initialize() {
         Robot.robotDriveTrain.ForwardDrive();
-        Robot.ledStrips.turnOffRearLEDStrip();
-        Robot.ledStrips.turnOnFrontLEDStrip();
+        //Robot.ledStrips.turnOffRearLEDStrip();
+        //Robot.ledStrips.turnOnFrontLEDStrip();
     }
 
 }
