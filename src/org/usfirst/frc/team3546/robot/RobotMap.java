@@ -16,6 +16,7 @@ public class RobotMap {
 	public static DoubleSolenoid shifterPositionSolenoid;
 	public static DoubleSolenoid clampPositionSolenoid;
 	public static DoubleSolenoid gearGrabSolenoid;
+	public static DoubleSolenoid climbingClampPositionSolenoid;
 	public static Potentiometer shootingorStorageGuidePotentiometer;
 	public static Potentiometer highorLowShootingGuidePotentiometer;
 	public static SpeedController climbingMotor;
@@ -65,7 +66,7 @@ public class RobotMap {
 		shifterPositionSolenoid = new DoubleSolenoid(0, 0, 1);
 		clampPositionSolenoid = new DoubleSolenoid(0, 2, 3);
 		gearGrabSolenoid = new DoubleSolenoid(0, 4, 5);
-		
+		climbingClampPositionSolenoid = new DoubleSolenoid(0,6,7);
 		
 	}
     // For example to map the left and right motors, you could define the

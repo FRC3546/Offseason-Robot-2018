@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3546.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc.team3546.robot.RobotMap;
@@ -20,4 +21,9 @@ public class Climbing extends Subsystem{
     public void climbingMotorClimb(double climb_speed){climbingMotor.set(climb_speed);}
 
     public void climbingMotorOff(){climbingMotor.set(0);}
+
+    private final DoubleSolenoid climbingClampSolenoid = RobotMap.climbingClampPositionSolenoid;
+
+    public void setClimbingClampDisengage() { climbingClampSolenoid.set(DoubleSolenoid.Value.kForward);}
+    public void setClimbingClampEngage() { climbingClampSolenoid.set(DoubleSolenoid.Value.kReverse);}
 }

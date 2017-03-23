@@ -15,7 +15,7 @@ import org.usfirst.frc.team3546.robot.RobotMap;
 public class Shooting extends Subsystem {
 
     public static final double REAR_SHOOTING_AND_STORAGE_MOTOR_SPEED = 1;
-    public static final double FRONT_SHOOTING_MOTOR_SPEED = .7;
+    public static final double FRONT_SHOOTING_MOTOR_SPEED = 1;
 
     public static final double SHOOTING_DEFLECTOR_SPEED = .3;
 

@@ -31,6 +31,8 @@ public class OI {
 
 	public JoystickButton climbingButton;
 	public JoystickButton climbingReverseButton;
+	public JoystickButton climbingClampInButton;
+	public JoystickButton climbingClampOutButton;
 
 	public JoystickButton shootsorthighButton;
 	public JoystickButton shootsortlowButton;
@@ -53,14 +55,14 @@ public class OI {
 		lowGearButton = new JoystickButton(leftJoystick, 2);
 		lowGearButton.whenPressed(new DriveTrainLowGear());
 
-		//fuelIntakeButton = new JoystickButton(coDrivingJoystick, 1);
-		//fuelIntakeButton.whileHeld(new FuelIntake());
-		//shootHighButton = new JoystickButton(coDrivingJoystick, 3);
-		//shootHighButton.whileHeld(new ShootHigh());
-		//shootLowButton = new JoystickButton(coDrivingJoystick, 2);
-		//shootLowButton.whileHeld((new ShootLow()));
-		//spitOutFuelButton = new JoystickButton(coDrivingJoystick, 4);
-		//spitOutFuelButton.whileHeld(new FuelOutput());
+		fuelIntakeButton = new JoystickButton(coDrivingJoystick, 1);
+		fuelIntakeButton.whileHeld(new FuelIntake());
+		shootHighButton = new JoystickButton(coDrivingJoystick, 3);
+		shootHighButton.whileHeld(new ShootHigh());
+		shootLowButton = new JoystickButton(coDrivingJoystick, 2);
+		shootLowButton.whileHeld((new ShootLow()));
+		spitOutFuelButton = new JoystickButton(coDrivingJoystick, 4);
+		spitOutFuelButton.whileHeld(new FuelOutput());
 
 		closeandGoUpButton = new JoystickButton(coDrivingJoystick, 6);
 		closeandGoUpButton.whenPressed(new SetClampUp());
@@ -75,21 +77,20 @@ public class OI {
 		climbingButton.whileHeld(new Climb());
 		climbingReverseButton = new JoystickButton(coDrivingJoystick, 10);
 		climbingReverseButton.whileHeld(new ClimbReverse());
+		climbingClampInButton = new JoystickButton(rightJoystick,1);
+		climbingClampInButton.whenPressed(new ClimbingClampEngage());
+		climbingClampOutButton = new JoystickButton(rightJoystick, 1);
+		climbingClampOutButton.whenReleased(new ClimbingClampDisengage());
 
-		//shootsorthighButton = new JoystickButton(rightJoystick, 6);
-		//shootsorthighButton.whileHeld(new MoveShooterDeflectorUp());
-		//shootsortlowButton = new JoystickButton(rightJoystick, 7);
-		//shootsortlowButton.whileHeld(new MoveShooterDeflectorDown());
+		shootsorthighButton = new JoystickButton(rightJoystick, 6);
+		shootsorthighButton.whileHeld(new MoveShooterDeflectorUp());
+		shootsortlowButton = new JoystickButton(rightJoystick, 7);
+		shootsortlowButton.whileHeld(new MoveShooterDeflectorDown());
 
-		//storagesorthighButton = new JoystickButton(leftJoystick, 11);
-		//storagesorthighButton.whileHeld(new MoveSortingDeflectorUp());
-		//storagesortlowButton = new JoystickButton(leftJoystick, 10);
-		//storagesortlowButton.whileHeld(new MoveSortingDeflectorDown());
-
-		//storagesorthighButton = new JoystickButton(rightJoystick, 11);
-		//storagesorthighButton.whenPressed(new MoveSortingDeflectorUp());
-		//storagesortlowButton = new JoystickButton(rightJoystick, 10);
-		//storagesortlowButton.whenPressed(new MoveSortingDeflectorDown());
+		storagesorthighButton = new JoystickButton(leftJoystick, 11);
+		storagesorthighButton.whileHeld(new MoveSortingDeflectorUp());
+		storagesortlowButton = new JoystickButton(leftJoystick, 10);
+		storagesortlowButton.whileHeld(new MoveSortingDeflectorDown());
 
 		}
 	

@@ -10,10 +10,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team3546.robot.commands.Drive;
 import org.usfirst.frc.team3546.robot.commands.PrintPotentiometer;
-import org.usfirst.frc.team3546.robot.commands.autonomous.BlueAlliancePlaceGearLeft;
-import org.usfirst.frc.team3546.robot.commands.autonomous.BlueAlliancePlaceGearRight;
-import org.usfirst.frc.team3546.robot.commands.autonomous.DoNothing;
-import org.usfirst.frc.team3546.robot.commands.autonomous.PlaceGearCenter;
+import org.usfirst.frc.team3546.robot.commands.autonomous.*;
 import org.usfirst.frc.team3546.robot.subsystems.*;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -71,10 +68,11 @@ Robot extends IterativeRobot {
 
 
         autoChooser = new SendableChooser();
-        autoChooser.addObject("LEFT", new BlueAlliancePlaceGearLeft());
+        autoChooser.addObject("LEFT", new RedAlliancePlaceGearLeft());
         autoChooser.addDefault("CENTER", new PlaceGearCenter());
-        autoChooser.addObject("RIGHT", new BlueAlliancePlaceGearRight());
+        autoChooser.addObject("RIGHT", new RedAlliancePlaceGearRight());
         autoChooser.addObject("Do Nothing", new DoNothing());
+        //autoChooser.addObject("TEST", new Test());
         SmartDashboard.putData("Auto mode", autoChooser);
     }
 	
