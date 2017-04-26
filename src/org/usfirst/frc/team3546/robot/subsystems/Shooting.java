@@ -68,7 +68,9 @@ public class Shooting extends Subsystem {
    // private CANTalon frontShootingMotor = RobotMap.frontShootingMotor;
 
     private CANSpeedController rearShootingandIntakeMotor = RobotMap.rearShootingandIntakeMotor;
+    private CANSpeedController rearShootingandIntakeMotorDuplicate = RobotMap.rearShootingandIntakeMotorDuplicate;
     private CANSpeedController frontShootingMotor = RobotMap.frontShootingMotor;
+    private CANSpeedController frontShootingMotorDuplicate = RobotMap.frontShootingMotorDuplicate;
 
     private SpeedController highorLowShootingGuideMotor = RobotMap.highorLowShootingGuideMotor;
 
@@ -102,16 +104,20 @@ public class Shooting extends Subsystem {
     private void setFrontShootingSpeed (double rpm){
         //frontShootingMotor.set(rpm);
         frontShootingMotor.set(FRONT_SHOOTING_MOTOR_SPEED);
+        frontShootingMotorDuplicate.set(FRONT_SHOOTING_MOTOR_SPEED);
     }
 
     private void setShootersOff (double rpm){
         frontShootingMotor.set(0);
+        frontShootingMotorDuplicate.set(0);
         rearShootingandIntakeMotor.set(0);
+        rearShootingandIntakeMotorDuplicate.set(0);
     }
 
     private void setRearShootingSpeed (double rpm){
         //rearShootingandIntakeMotor.set(rpm);
         rearShootingandIntakeMotor.set(REAR_SHOOTING_AND_STORAGE_MOTOR_SPEED);
+        rearShootingandIntakeMotorDuplicate.set(REAR_SHOOTING_AND_STORAGE_MOTOR_SPEED);
     }
 
     public void moveShootingDeflectorDown(){highorLowShootingGuideMotor.set(-SHOOTING_DEFLECTOR_SPEED);}

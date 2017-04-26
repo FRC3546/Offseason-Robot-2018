@@ -22,7 +22,9 @@ public class RobotMap {
 	public static SpeedController climbingMotor;
 	public static SpeedController highorLowShootingGuideMotor;
 	public static CANTalon rearShootingandIntakeMotor;
+	public static CANTalon rearShootingandIntakeMotorDuplicate;
 	public static CANTalon frontShootingMotor;
+	public static CANTalon frontShootingMotorDuplicate;
 	public static SpeedController frontIntakeandStorageMotor;
 	public static SpeedController shootingorStorageGuideMotor;
 	public static Relay frontLEDStripRelay;
@@ -44,7 +46,9 @@ public class RobotMap {
 		shootingorStorageGuideMotor = new Spark(7);
 
 		rearShootingandIntakeMotor = new CANTalon(1);
+		rearShootingandIntakeMotorDuplicate = new CANTalon(3);
 		frontShootingMotor = new CANTalon(2);
+		frontShootingMotorDuplicate = new CANTalon(4);
 
 		driveTrainMotors = new RobotDrive(frontLeftMotor, backLeftMotor, frontRightMotor, backRightMotor);
 

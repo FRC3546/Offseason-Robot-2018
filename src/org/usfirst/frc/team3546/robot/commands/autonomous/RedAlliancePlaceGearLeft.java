@@ -17,5 +17,8 @@ public class RedAlliancePlaceGearLeft extends CommandGroup{
         addSequential(new SetGearRelease());
         addSequential(new WaitCommand(.5));
         addSequential(new DriveStraight(1, true));
+        addSequential(new WaitCommand(.5));
+        addSequential(new DriveAtAngle(-120, .25, 1.1));
+        addSequential(new DriveStraight(2, false));
     }
 }

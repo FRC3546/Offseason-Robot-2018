@@ -68,10 +68,14 @@ Robot extends IterativeRobot {
 
 
         autoChooser = new SendableChooser();
-        autoChooser.addObject("LEFT", new RedAlliancePlaceGearLeft());
+        autoChooser.addObject("LEFT", new PlaceGearLeft());
         autoChooser.addDefault("CENTER", new PlaceGearCenter());
-        autoChooser.addObject("RIGHT", new RedAlliancePlaceGearRight());
+        autoChooser.addObject("RIGHT", new PlaceGearRight());
         autoChooser.addObject("Do Nothing", new DoNothing());
+        autoChooser.addObject("Blue Left Boiler", new BlueAlliancePlaceGearLeft());
+        autoChooser.addObject("Blue Right Retrieval Zone", new BlueAlliancePlaceGearRight());
+        autoChooser.addObject("Red Left Retrieval Zone", new RedAlliancePlaceGearLeft());
+        autoChooser.addObject("Red Right Boiler", new RedAlliancePlaceGearRight());
         //autoChooser.addObject("TEST", new Test());
         SmartDashboard.putData("Auto mode", autoChooser);
     }
