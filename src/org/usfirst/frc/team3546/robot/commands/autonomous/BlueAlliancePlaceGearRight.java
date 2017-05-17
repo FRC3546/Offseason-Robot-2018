@@ -11,7 +11,7 @@ public class BlueAlliancePlaceGearRight extends CommandGroup{
     public BlueAlliancePlaceGearRight(){
         addSequential(new DriveTrainHighGear());
         addSequential(new SetClampUp());
-        addSequential(new DriveStraight(2, false));
+        addSequential(new DriveStraight(2.05, false));
         addSequential(new DriveAtAngle(-120, .25, 1.85));
         addSequential(new WaitCommand(.5));
         addSequential(new SetGearRelease());
