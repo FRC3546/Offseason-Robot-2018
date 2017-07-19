@@ -35,6 +35,7 @@ Robot extends IterativeRobot {
 	public static BallSorting ballSorting;
 	public static LEDStrips ledStrips;
 	public static Camera camera;
+	public static TestMotorSubsystem testMotorSubsystem;
 
            Command autonomousCommand;
            Command driveCommand;
@@ -56,6 +57,7 @@ Robot extends IterativeRobot {
             ballSorting = new BallSorting();
             ledStrips = new LEDStrips();
             camera = new Camera();
+            testMotorSubsystem = new TestMotorSubsystem();
 
             gyro.zeroYaw();
 

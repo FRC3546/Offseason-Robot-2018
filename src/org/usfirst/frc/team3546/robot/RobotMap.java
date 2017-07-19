@@ -29,6 +29,10 @@ public class RobotMap {
 	public static SpeedController shootingorStorageGuideMotor;
 	public static Relay frontLEDStripRelay;
 	public static Relay rearLEDStripRelay;
+
+	//speed controller is an object defined by wpilib
+	public static SpeedController demoMotor;
+	public static SpeedController testMotor;
 	
 	public static void init(){
 		
@@ -36,6 +40,9 @@ public class RobotMap {
 		SpeedController frontRightMotor = new VictorSP(2);
 		SpeedController backLeftMotor = new VictorSP(1);
 		SpeedController backRightMotor = new VictorSP(0);
+
+		demoMotor = new VictorSP(5);
+		testMotor = new VictorSP(6);
 
 		shootingorStorageGuidePotentiometer = new AnalogPotentiometer(0,3600,0);
 		highorLowShootingGuidePotentiometer = new AnalogPotentiometer(1,3600,0);

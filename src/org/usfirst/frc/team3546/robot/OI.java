@@ -40,6 +40,8 @@ public class OI {
 	public JoystickButton storagesorthighButton;
 	public JoystickButton storagesortlowButton;
 
+	public JoystickButton spinTestClockwise;
+
 	public OI (){
 		leftJoystick = new Joystick(0);
 		rightJoystick = new Joystick(1);
@@ -49,6 +51,9 @@ public class OI {
 		//forwardDriveButton.whenPressed(new ForwardDrive());
 		//reverseDriveButton = new JoystickButton(rightJoystick, 2);
 		//reverseDriveButton.whenPressed(new ReverseDrive());
+
+		spinTestClockwise = new JoystickButton(coDrivingJoystick, 8);
+		spinTestClockwise.whileHeld(new SpinTestClockwisespinCounterClockwise());
 		
 		highGearButton = new JoystickButton(leftJoystick, 3);
 		highGearButton.whenPressed(new DriveTrainHighGear());
